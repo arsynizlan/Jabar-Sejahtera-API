@@ -25,12 +25,12 @@ class EventController extends Controller
         if ($event) {
             return new ApiResponse(true, 'Details Event', $event);
         }
-        return response()->json(new ApiResponse(false, 'Donasi tidak ditemukan'), 404);
+        return response()->json(new ApiResponse(false, 'Event tidak ditemukan'), 404);
     }
 
     public function store(EventStoreRequest $request)
     {
-        $validated = $request->validated();
+        $request->validated();
 
         $image = $request->file('image');
         $image->storeAs('image/event', $image->hashName());
