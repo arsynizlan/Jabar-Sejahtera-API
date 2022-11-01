@@ -26,7 +26,7 @@ class EventStoreRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'description' => 'required',
-            'organizer' => 'required|max:255',
+            'category' => 'required',
             'date' => 'required',
             'location' => 'required|max:255',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2058'

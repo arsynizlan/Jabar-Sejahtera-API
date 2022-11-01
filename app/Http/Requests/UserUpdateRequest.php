@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventUpdateRequest extends FormRequest
+class UserUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,10 @@ class EventUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|max:255',
-            'description' => 'required',
-            'category' => 'required',
-            'date' => 'required',
-            'location' => 'required|max:255',
-            'image' => 'image|mimes:jpg,jpeg,png|max:2058'
+            'name' => 'required',
+            'phone_number' => 'required',
+            'security_question' => 'required',
+            'email' => 'required|unique:users,email,' . $this->id,
         ];
     }
 }

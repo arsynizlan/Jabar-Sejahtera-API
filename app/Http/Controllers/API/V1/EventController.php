@@ -38,7 +38,7 @@ class EventController extends Controller
         $event = Event::create([
             'title' => $request->title,
             'description' => $request->description,
-            'organizer' => $request->organizer,
+            'category' => $request->category,
             'location' => $request->location,
             'date' => $request->date,
             'image' => $image->hashName(),
@@ -67,7 +67,7 @@ class EventController extends Controller
             $event->update([
                 'title' => $request->title,
                 'description' => $request->description,
-                'organizer' => $request->organizer,
+                'category' => $request->category,
                 'location' => $request->location,
                 'date' => $request->date,
                 'image' => $image,
@@ -77,7 +77,7 @@ class EventController extends Controller
             $event->update([
                 'title' => $request->title,
                 'description' => $request->description,
-                'organizer' => $request->organizer,
+                'category' => $request->category,
                 'location' => $request->location,
                 'date' => $request->date,
                 'image' => $image,

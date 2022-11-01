@@ -19,6 +19,7 @@ class AuthController extends Controller
         $request->validated();
         try {
             DB::transaction(function () use ($request) {
+                $role = $request->role;
                 $user = User::create([
                     'name' => request('name'),
                     'email' => $request->email,
